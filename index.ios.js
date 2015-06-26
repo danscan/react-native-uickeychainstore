@@ -10,8 +10,6 @@ var Keychain = {
   setAccessGroup: function (accessGroup: string, callback?: ?(error: ?Error) => void): Promise {
     return new Promise((resolve, reject) => {
       KeychainManager.setAccessGroup(accessGroup, function (error) {
-        callback && callback((error & convertError(error)) || null)
-
         if (error) {
           reject(convertError(error))
         } else {
@@ -24,8 +22,6 @@ var Keychain = {
   setService: function (service: string, callback?: ?(error: ?Error) => void): Promise {
     return new Promise((resolve, reject) => {
       KeychainManager.setService(service, function (error) {
-        callback && callback((error & convertError(error)) || null)
-
         if (error) {
           reject(convertError(error))
         } else {
@@ -38,8 +34,6 @@ var Keychain = {
   setString: function (string: string, key: string, callback?: ?(error: ?Error) => void): Promise {
     return new Promise((resolve, reject) => {
       KeychainManager.setString(string, key, function (error) {
-        callback && callback((error & convertError(error)) || null)
-
         if (error) {
           reject(convertError(error))
         } else {
@@ -52,8 +46,6 @@ var Keychain = {
   stringForKey: function (key: string, callback?: ?(error: ?Error, result: ?string) => void): Promise {
     return new Promise((resolve, reject) => {
       KeychainManager.stringForKey(key, function (error) {
-        callback && callback((error & convertError(error)) || null)
-
         if (error) {
           reject(convertError(error))
         } else {
