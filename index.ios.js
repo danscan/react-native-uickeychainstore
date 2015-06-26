@@ -11,7 +11,7 @@ var Keychain = {
     return new Promise((resolve, reject) => {
       KeychainManager.setAccessGroup(accessGroup, function (error) {
         if (error) {
-          reject(convertError(error))
+          reject(error)
         } else {
           resolve()
         }
@@ -23,7 +23,7 @@ var Keychain = {
     return new Promise((resolve, reject) => {
       KeychainManager.setService(service, function (error) {
         if (error) {
-          reject(convertError(error))
+          reject(error)
         } else {
           resolve()
         }
@@ -35,7 +35,7 @@ var Keychain = {
     return new Promise((resolve, reject) => {
       KeychainManager.setString(string, key, function (error) {
         if (error) {
-          reject(convertError(error))
+          reject(error)
         } else {
           resolve()
         }
@@ -47,24 +47,13 @@ var Keychain = {
     return new Promise((resolve, reject) => {
       KeychainManager.stringForKey(key, function (error) {
         if (error) {
-          reject(convertError(error))
+          reject(error)
         } else {
           resolve()
         }
       })
     })
   }
-}
-
-function convertError(error) {
-  if (!error) {
-    return null
-  }
-
-  var out = new Error(error.message)
-  out.key = error.key
-
-  return out
 }
 
 module.exports = Keychain
