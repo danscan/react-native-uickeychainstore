@@ -20,7 +20,7 @@
 
 @implementation RCTUICKeychainStoreManager
 
-RCT_EXPORT_MODULE()
+RCT_EXPORT_MODULE(RCTUICKeychainManager)
 
 RCT_EXPORT_METHOD(setAccessGroup:(nullable NSString *)accessGroup callback:(RCTResponseSenderBlock)callback) {
   self.accessGroup = accessGroup;
