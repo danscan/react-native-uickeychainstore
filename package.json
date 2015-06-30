@@ -10,6 +10,6 @@
     "url": "git://github.com/justinmakaila/react-native-uickeychainstore.git"
   },
   "dependencies": {
-    "react-native": "^0.6.0"
+    "react-native": "^0.5.0"
   }
 }
